@@ -14,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 @RestController
 @RequestMapping("/student")
@@ -45,7 +47,11 @@ public class StudentAuthController {
             response.setStatus(HttpStatus.OK.value());
             JSONObject result=new JSONObject();
             Session session;
-            Session savedSession=sessionService.getSessionByUserIdentifier(studentNumber);
+            ArrayList<Session> savedSessions= (ArrayList<Session>) sessionService.getSessionByUserIdentifier(studentNumber);
+            if(savedSessions!=null)
+                savedSessions.sort(Comparator.comparing(Session::getExpireTime));
+            Session savedSession=savedSessions!=null && savedSessions.size()>0 ? savedSessions.get(0) :null;
+
             if(savedSession!=null && savedSession.getExpireTime()>System.currentTimeMillis()){
                 savedSession.setExpireTime(System.currentTimeMillis()+(60*10*1000));
                 session=savedSession;

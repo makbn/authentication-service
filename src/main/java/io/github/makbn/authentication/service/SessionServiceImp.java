@@ -5,6 +5,8 @@ import io.github.makbn.authentication.repository.SessionRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Component("sessionService")
 @Transactional
 public class SessionServiceImp implements SessionService {
@@ -22,7 +24,7 @@ public class SessionServiceImp implements SessionService {
     }
 
     @Override
-    public Session getSessionByUserIdentifier(String id) {
+    public List<Session> getSessionByUserIdentifier(String id) {
         return sessionRepository.findByUserIdentifier(id);
     }
 
@@ -35,5 +37,10 @@ public class SessionServiceImp implements SessionService {
     public void update(Session session) {
         sessionRepository.update(session.getId(),session.getExpireTime());
 
+    }
+
+    @Override
+    public void delete(Session session) {
+        sessionRepository.delete(session);
     }
 }

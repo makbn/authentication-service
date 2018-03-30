@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 @Controller
 public class SessionController {
@@ -37,6 +38,12 @@ public class SessionController {
                 ,"/authenticate");
             }else {
                 Session savedSession=sessionService.getSessionBySS(s.getSessionString());
+                ArrayList<Session> userSessions= (ArrayList<Session>) sessionService.getSessionByUserIdentifier(studentNumber);
+                userSessions.forEach(item -> {
+                    if(item.getExpireTime()<System.currentTimeMillis()){
+                        sessionService.delete(item);
+                    }
+                });
                 if(savedSession==null){
                     response.setStatus(HttpStatus.UNAUTHORIZED.value());
                     return ResponseFactory.getErrorResponse(HttpStatus.UNAUTHORIZED.value()
@@ -51,6 +58,7 @@ public class SessionController {
                             ,"/authenticate");
                 }else if(savedSession.getExpireTime()<System.currentTimeMillis()){
                     response.setStatus(HttpStatus.UNAUTHORIZED.value());
+                    sessionService.delete(savedSession);
                     return ResponseFactory.getErrorResponse(HttpStatus.UNAUTHORIZED.value()
                             ,"session expired"
                             ,"user session is not valid!need login to access."

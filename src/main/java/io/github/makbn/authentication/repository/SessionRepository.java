@@ -7,14 +7,17 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface SessionRepository extends CrudRepository<Session,Long> {
 
     Session findBySessionString(String s);
 
-    Session findByUserIdentifier(String s);
+    List<Session> findByUserIdentifier(String s);
 
     @Modifying // needed for updating query
     @Query("UPDATE Session s SET s.expireTime= :expireDate WHERE s.id= :id")
     void update(@Param("expireDate") Long expireDate,@Param("id") Long id);
+
 }
