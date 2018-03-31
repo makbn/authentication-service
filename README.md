@@ -5,12 +5,17 @@ Authentication service for Cloud Computing Project following instruction shows y
 
 ## Running
 
-First of all you need to run this service:
+First of all you need to run this service,service is ready and you can just pull image from docker hub and run it and done!but if you want to create your own image (it's not necessary) [along these lines you can build yours](#create-your-own-image).
  
 ### pulling from docker hub:
 
 ```terminal
 docker pull makbn/cc-authentication-service 
+```
+it's done and now you can run it and link to database service:
+
+```terminal
+docker run --name auth_service -d -it --link db_service:db_service_host -p 8080:8080 makbn/cc-authentication-microservice:latest -sleep 1000000000
 ```
 
 ### create your own image :
