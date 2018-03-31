@@ -99,3 +99,32 @@ http://localhost:8080/student/login?studentNumber=9312430000&password=123456
     "path": "/student/login"
 }
 ```
+
+### Authenticate:
+
+* Request : `GET`
+* Parameters : `studentNumber`,`session`
+* Example:
+```
+http://localhost:8080/authenticate?studentNumber=9312430000&session=eyJleHBpcmVUaW1lIjoxNTIyNDkxMTgxMTQ3LCJjcmVhdGVUaW1lIjoxNTIyNDkwNTgxMTQ3LCJ1c2VySWRlbnRpZmllciI6IjkzMTI0MzAwMDAiLCJzY29wZSI6IkFsbCIsInNlc3Npb25TdHJpbmciOiJLd3dMMTU2OTM3Q1BqVXN3dFhOTTk0SyJ9
+```
+* Success response ( `200 OK`):
+```json
+{
+    "result": {
+        "message": "user session is valid and refreshed."
+    },
+    "timestamp": "2018-03-31T10:03:25.781+0000",
+    "status": 200
+}
+```
+* Error response (`401 unauthorized`):
+```json 
+{
+    "path": "/authenticate",
+    "error": "session expired",
+    "message": "user session is not valid!need login to access.",
+    "timestamp": "2018-03-31T12:49:25.069+0000",
+    "status": 401
+}
+,,,
