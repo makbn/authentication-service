@@ -18,9 +18,12 @@ it's done and now you can run it and link to database service:
 docker run --name auth_service -d -it --link db_service:db_service_host -p 8080:8080 makbn/cc-authentication-microservice:latest -sleep 1000000000
 ```
 this ready to use image works on port `8080` and communicate with db_service on port `3306` and host `db_service_host` means that you need to link this image to your database container! here is database user info for this serivce:
-url=`jdbc:mysql://db_service_host:3306/cc_project_database`
-username=`auth_service_user`
-password=`Auth_service@1397`
+
+**url**=`jdbc:mysql://db_service_host:3306/cc_project_database`
+
+**username**=`auth_service_user`
+
+**password**=`Auth_service@1397`
 
 user scope is `%` : `auth_service_user@'%'`
 
