@@ -78,7 +78,8 @@ http://localhost:8080/student/login?studentNumber=9312430000&password=123456
 ```
 * Error response:
   * (`404 not found`):
-  ```json
+
+```json
   {
     "path": "/student/login",
     "error": "username not found",
@@ -87,6 +88,7 @@ http://localhost:8080/student/login?studentNumber=9312430000&password=123456
     "status": 404
 }
 ```
+
   * (`400 bad request`):
   ```json
   {
