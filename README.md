@@ -58,10 +58,21 @@ mvn package
 
 ## Using
 
-* Student login:
+### Student login:
   * Request : `GET`
   * Parameters : `studentNumber`,`password`
   * Example:
   ```
   http://localhost:8080/student/login?studentNumber=9312430000&password=123456
+  ```
+  * Success response ( `200 OK`):
+  ```json
+  {
+    "result": {
+        "session": "eyJleHBpcmVUaW1lIjoxNTIyNDkxMTgxMTQ3LCJjcmVhdGVUaW1lIjoxNTIyNDkwNTgxMTQ3LCJ1c2VySWRlbnRpZmllciI6IjkzMTI0MzAwMDAiLCJzY29wZSI6IkFsbCIsInNlc3Npb25TdHJpbmciOiJLd3dMMTU2OTM3Q1BqVXN3dFhOTTk0SyJ9",
+        "status": "new"
+    },
+    "timestamp": "2018-03-31T10:03:01.222+0000",
+    "status": 200
+}
   ```
