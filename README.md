@@ -1,15 +1,16 @@
 # Authentication service
-Authentication service for Cloud Computing Project 
+Authentication service for Cloud Computing Project following instruction shows you how to run or use this service:
+ 1. [Running Serivice as a docker container](#running)
+ 2. [Using serivce](#using)
 
-## Using
+## Running
 
-First of all you need to run this service?:
+First of all you need to run this service:
  
 ### pulling from docker hub:
 
 ```terminal
 docker pull makbn/cc-authentication-service 
-
 ```
 
 ### create your own image :
