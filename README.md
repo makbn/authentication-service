@@ -127,4 +127,4 @@ http://localhost:8080/authenticate?studentNumber=9312430000&session=eyJleHBpcmVU
     "timestamp": "2018-03-31T12:49:25.069+0000",
     "status": 401
 }
-,,,
+```
