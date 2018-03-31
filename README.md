@@ -59,20 +59,41 @@ mvn package
 ## Using
 
 ### Student login:
-  * Request : `GET`
-  * Parameters : `studentNumber`,`password`
-  * Example:
-  ```
-  http://localhost:8080/student/login?studentNumber=9312430000&password=123456
-  ```
-  * Success response ( `200 OK`):
+* Request : `GET`
+* Parameters : `studentNumber`,`password`
+* Example:
+```
+http://localhost:8080/student/login?studentNumber=9312430000&password=123456
+```
+* Success response ( `200 OK`):
+```json
+{
+   "result": {
+       "session": "eyJleHBpcmVUaW1lIjoxNTIyNDkxMTgxMTQ3LCJjcmVhdGVUaW1lIjoxNTIyNDkwNTgxMTQ3LCJ1c2VySWRlbnRpZmllciI6IjkzMTI0MzAwMDAiLCJzY29wZSI6IkFsbCIsInNlc3Npb25TdHJpbmciOiJLd3dMMTU2OTM3Q1BqVXN3dFhOTTk0SyJ9",
+       "status": "new"
+   },
+   "timestamp": "2018-03-31T10:03:01.222+0000",
+   "status": 200
+}
+```
+* Error response:
+  * (`404 not found`):
   ```json
   {
-    "result": {
-        "session": "eyJleHBpcmVUaW1lIjoxNTIyNDkxMTgxMTQ3LCJjcmVhdGVUaW1lIjoxNTIyNDkwNTgxMTQ3LCJ1c2VySWRlbnRpZmllciI6IjkzMTI0MzAwMDAiLCJzY29wZSI6IkFsbCIsInNlc3Npb25TdHJpbmciOiJLd3dMMTU2OTM3Q1BqVXN3dFhOTTk0SyJ9",
-        "status": "new"
-    },
-    "timestamp": "2018-03-31T10:03:01.222+0000",
-    "status": 200
+    "path": "/student/login",
+    "error": "username not found",
+    "message": "no student exists with entered student number",
+    "timestamp": "2018-03-31T12:37:20.227+0000",
+    "status": 404
 }
-  ```
+```
+  * (`400 bad request`):
+  ```json
+  {
+    "timestamp": "2018-03-31T12:38:08.069+0000",
+    "status": 400,
+    "error": "Bad Request",
+    "message": "Parameter conditions \"studentNumber, password\" not met for actual request parameters: studentNumber={9312430009}, passwor={123456}",
+    "path": "/student/login"
+}
+```
