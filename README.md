@@ -5,9 +5,9 @@ Authentication service for Cloud Computing Project
 
 First of all you need to run this service?:
  
-1. pulling from docker hub:
+* pulling from docker hub:
 ``` docker pull makbn/cc-authentication-service ```
-2. create your own image :
+* create your own image :
   1. download `jar` file from [here](https://github.com/makbn/authentication-service/releases/tag/1.0-SNAPSHOT)
   2. create a new empty directory
   3. move downloaded `jar` file to the directory
