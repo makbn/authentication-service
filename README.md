@@ -55,3 +55,13 @@ after adding this line use `mvn` command:
 ```terminal
 mvn package
 ```
+
+## Using
+
+* Student login:
+  * Request : `GET`
+  * Parameters : `studentNumber`,`password`
+  * Example:
+  ```
+  http://localhost:8080/student/login?studentNumber=9312430000&password=123456
+  ```
