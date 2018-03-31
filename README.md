@@ -78,7 +78,7 @@ http://localhost:8080/student/login?studentNumber=9312430000&password=123456
 ```
 * Error response:
 
-1. (`404 not found`):
+1. `404 not found`:
 
 ```json
   {
@@ -89,7 +89,7 @@ http://localhost:8080/student/login?studentNumber=9312430000&password=123456
     "status": 404
 }
 ```
-2. (`400 bad request`):
+2. `400 bad request`:
   ```json
   {
     "timestamp": "2018-03-31T12:38:08.069+0000",
