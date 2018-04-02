@@ -27,7 +27,7 @@ this ready to use image works on port `8080` and communicate with db_service on 
 
 user scope is `%` : `auth_service_user@'%'`
 
-### create your own image :
+### create your own image:
 
 1. download `jar` file from [here](https://github.com/makbn/authentication-service/releases/tag/1.0-SNAPSHOT) or you can [build your own jar from source code](#building-jar-from-spring-project)
 2. create a new empty directory
