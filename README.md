@@ -25,7 +25,7 @@ this ready to use image works on port `8080` and communicate with db_service on 
 
 **password**=`Auth_service@1397`
 
-user scope is `%` : `auth_service_user@'%'`
+user host is `%` : `auth_service_user@'%'`
 
 ### create your own image:
 
