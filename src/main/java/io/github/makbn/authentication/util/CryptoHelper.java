@@ -6,7 +6,6 @@ import java.security.SecureRandom;
 
 public class CryptoHelper {
 
-    private static final String key="sfweow9wr9wrfua@%@#falsjncv%#@%@r23r__23=23r**bvaeu9f78w9";
     private static final String easy = "0123456789" + "ACEFGHJKLMNPQRUVWXYabcdefhijkprstuvwx";
     private static RandomSession sessionGen;
 

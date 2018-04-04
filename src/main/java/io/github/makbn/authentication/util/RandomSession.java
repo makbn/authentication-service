@@ -8,14 +8,6 @@ import java.util.Random;
 
 
 class RandomSession {
-    /**
-     * Generate a random string.
-     */
-    public String nextString() {
-        for (int idx = 0; idx < buf.length; ++idx)
-            buf[idx] = symbols[random.nextInt(symbols.length)];
-        return new String(buf);
-    }
 
     public static final String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -58,6 +50,15 @@ class RandomSession {
      */
     public RandomSession() {
         this(21);
+    }
+
+    /**
+     * Generate a random string.
+     */
+    public String nextString() {
+        for (int idx = 0; idx < buf.length; ++idx)
+            buf[idx] = symbols[random.nextInt(symbols.length)];
+        return new String(buf);
     }
 
 }
