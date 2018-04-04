@@ -1,6 +1,5 @@
 package io.github.makbn.authentication.controller;
 
-import io.github.makbn.authentication.UserAuthentication;
 import io.github.makbn.authentication.model.Session;
 import io.github.makbn.authentication.model.Student;
 import io.github.makbn.authentication.service.SessionService;
@@ -10,7 +9,6 @@ import io.github.makbn.authentication.util.ResponseFactory;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;

@@ -2,8 +2,6 @@ package io.github.makbn.authentication.util;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
 import java.security.SecureRandom;
 
 public class CryptoHelper {

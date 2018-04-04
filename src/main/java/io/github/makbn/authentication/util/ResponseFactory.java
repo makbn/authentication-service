@@ -2,7 +2,6 @@ package io.github.makbn.authentication.util;
 
 import org.json.simple.JSONObject;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
