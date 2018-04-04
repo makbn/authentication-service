@@ -1,4 +1,7 @@
 # Authentication service
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/227a02ac09084a59b7b2241ef04ed6cd)](https://app.codacy.com/app/makbn/authentication-service?utm_source=github.com&utm_medium=referral&utm_content=makbn/authentication-service&utm_campaign=badger)
+
 Authentication service for Cloud Computing Project following instruction shows you how to run or use this service:
  1. [Running Serivice as a docker container](#running)
  2. [Using serivce](#using)
